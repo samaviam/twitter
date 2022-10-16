@@ -11,8 +11,18 @@ module.exports = {
 
     theme: {
         extend: {
+            backgroundImage: {
+                'auth-texture': "url(https://abs.twimg.com/sticky/illustrations/lohp_en_1302x955.png)"
+            },
+            colors: {
+                'twitter-blue': '#1d9bf0',
+                'twitter-gray': '#71767b',
+            },
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                twitterH: ['TwitterChirpH', ...defaultTheme.fontFamily.sans],
+                twitterM: ['TwitterChirpM', ...defaultTheme.fontFamily.sans],
+                twitterR: ['TwitterChirpR', ...defaultTheme.fontFamily.sans]
             },
         },
     },

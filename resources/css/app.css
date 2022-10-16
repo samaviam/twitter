@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "TwitterChirpH";
+    src: url("https://abs.twimg.com/fonts/v1/chirp-extended-heavy-web.woff") format("woff"),
+        url("https://abs.twimg.com/fonts/v1/chirp-extended-heavy-web.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "TwitterChirpM";
+    src: url("https://abs.twimg.com/fonts/v2/chirp-medium-web.woff") format("woff"),
+        url("https://abs.twimg.com/fonts/v2/chirp-medium-web.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "TwitterChirpR";
+    src: url("https://abs.twimg.com/fonts/v2/chirp-regular-web.woff") format("woff"),
+        url("https://abs.twimg.com/fonts/v2/chirp-regular-web.woff2") format("woff2");
+}
