@@ -11,6 +11,11 @@ export default defineConfig({
         }),
         react(),
     ],
+    server: {
+        hmr: {
+            host: 'twitter.me'
+        }
+    },
     ssr: {
         noExternal: ['@inertiajs/server'],
     },
