@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link, Head } from '@inertiajs/inertia-react';
+import SignUp from '@/Modals/SignUp';
+import SignIn from '@/Modals/SignIn';
 
 export default function Auth(props) {
     return (
         <>
             <Head title="Twitter. It’s what’s happening" />
 
-            <div className="flex flex-col bg-black text-[#e7e9ea]">
+            <div className="flex flex-col min-h-screen bg-black text-[#e7e9ea]">
                 <div className="flex flex-auto flex-col md:flex-row-reverse">
                     <div className="min-w-[45vw] max-w-[600px] p-[34px]">
                         <svg viewBox="0 0 24 24" aria-hidden="true" className="w-[42px] fill-[#d6d9db] pb-[11px]"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
@@ -25,7 +27,7 @@ export default function Auth(props) {
                                 <div className="flex justify-center items-center before:w-full before:h-px before:bg-[#2f3336] after:w-full after:h-px after:bg-[#2f3336]">
                                     <span className="text-sm px-2 leading-[0]">or</span>
                                 </div>
-                                <Link href="#" className="block bg-twitter-blue text-center font-twitterM text-sm text-white p-2 rounded-full">Sign up with phone or email</Link>
+                                <Link href="/signup" className="block bg-twitter-blue text-center font-twitterM text-sm text-white p-2 rounded-full">Sign up with phone or email</Link>
                             </div>
 
                             <p className="mt-2 text-[10px] text-twitter-gray font-twitterR font-normal leading-[11px]">
@@ -34,38 +36,41 @@ export default function Auth(props) {
 
                             <div className="mt-[57px] mb-2">
                                 <p className="mb-[15px] font-twitterR font-bold leading-5 md:mb-[19px]">Already have an account?</p>
-                                <Link href="#" className="block bg-transparent text-center font-twitterM text-sm text-twitter-blue p-2 rounded-full border border-[#536471]">Sign in</Link>
+                                <Link href="/signin" className="block bg-transparent text-center font-twitterM text-sm text-twitter-blue p-2 rounded-full border border-[#536471]">Sign in</Link>
                             </div>
                         </div>
                     </div>
                     <div className="relative flex flex-auto items-center min-h-[45vh] bg-auth-texture bg-center bg-cover">
-                        <svg viewBox="0 0 24 24" aria-hidden="true" className="absolute w-full h-2/4 max-h-[380px]"><g><path fill="#fff" d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
+                        <svg viewBox="0 0 24 24" aria-hidden="true" className="absolute w-full h-full max-h-[380px] p-8 md:h-2/4"><g><path fill="#fff" d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
                     </div>
                 </div>
                 <div>
-                    <ul className="flex flex-wrap gap-x-[15px] justify-center px-[15px] py-[11px]">
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">About</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Help Center</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Terms of Service</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Privacy Policy</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Cookie Policy</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Imprint</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Accessibility</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Ads info</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Blog</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Status</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Careers</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Brand Resources</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Advertising</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Marketing</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Twitter for Business</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Developers</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Directory</Link></li>
-                        <li><Link href="#" className="text-twitter-gray text-xs font-normal whitespace-nowrap">Settings</Link></li>
-                        <li><span className="text-twitter-gray text-xs font-normal whitespace-nowrap">© 2022 Twitter, Inc.</span></li>
+                    <ul className="flex flex-wrap gap-x-[18px] justify-center px-[16px] py-[12px]">
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">About</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Help Center</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Terms of Service</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Privacy Policy</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Cookie Policy</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Imprint</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Accessibility</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Ads info</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Blog</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Status</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Careers</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Brand Resources</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Advertising</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Marketing</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Twitter for Business</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Developers</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Directory</Link></li>
+                        <li><Link href="#" className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">Settings</Link></li>
+                        <li><span className="text-twitter-gray text-[13px] font-normal whitespace-nowrap">© 2022 Twitter, Inc.</span></li>
                     </ul>
                 </div>
             </div>
+
+            {props.modal == 'SignUp' && <SignUp />}
+            {props.modal == 'SignIn' && <SignIn />}
         </>
     );
 }
