@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -15,13 +16,10 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+Route::controller(AuthController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/signup', 'signup')->name('signup');
+    Route::get('/signin', 'signin')->name('signin');
 });
 
 Route::get('/dashboard', function () {
