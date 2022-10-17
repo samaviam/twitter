@@ -17,4 +17,11 @@ class AuthController extends Controller
 
         return $this->index();
     }
+
+    public function signin()
+    {
+        Inertia::modal('SignIn');
+
+        return $this->index();
+    }
 }
