@@ -17,6 +17,7 @@ module.exports = {
             colors: {
                 'twitter-blue': '#1d9bf0',
                 'twitter-gray': '#71767b',
+                'twitter-input': '#e7e9ea',
             },
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
