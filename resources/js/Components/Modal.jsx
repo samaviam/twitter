@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from '@inertiajs/inertia-react';
+import { Inertia } from '@inertiajs/inertia';
 
 export default function Modal(props) {
-    const close = () => window.history.back();
+    const close = () => props.exitTo ? Inertia.visit(props.exitTo) : window.history.back();
 
     return (
         <div tabIndex="-1" className="fixed flex justify-center items-center bg-[#5b708366] overflow-x-hidden top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full">
