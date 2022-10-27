@@ -29,7 +29,7 @@ export default function TextInput(props) {
                     }`}
                 >{props.label}</span>
 
-                <div className="w-full mt-[16px] px-2 pt-[12px] pb-2">
+                <div className="w-full mt-[15px] px-2 pt-[11px] pb-2 md:mt-4 md:pt-3">
                     <input
                         type={props.type}
                         className={
