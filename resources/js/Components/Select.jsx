@@ -8,7 +8,7 @@ export default function Select(props) {
             focused
             ? 'border-twitter-blue shadow-[0_0_0_1px_#1d9bf0]'
             : 'border-[#333639]'
-        }`}>
+        } ${props.className}`}>
             <span
                 className={`absolute text-xs font-twitterR font-normal leading-[15px] pt-2 px-2 ${
                     focused
@@ -20,12 +20,14 @@ export default function Select(props) {
             </span>
 
             <select
-                {...props}
+                name={props.name}
                 onFocus={() => setFocus(true)}
                 onBlur={() => setFocus(false)}
                 className="bg-none bg-transparent pt-[11px] pb-2 px-2 mt-[15px] border-0 text-base text-twitter-input font-twitterR focus:ring-0"
             >
-                {props.children}
+                {props.options.map(option => (
+                    <Option key={option.value} {...option} />
+                ))}
             </select>
 
             <svg
@@ -40,5 +42,11 @@ export default function Select(props) {
                 <g><path d="M3.543 8.96l1.414-1.42L12 14.59l7.043-7.05 1.414 1.42L12 17.41 3.543 8.96z"></path></g>
             </svg>
         </label>
+    );
+}
+
+function Option(props) {
+    return (
+        <option {...props} className="bg-black text-twitter-input">{props.label}</option>
     );
 }
